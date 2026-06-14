@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arsitek Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">ARCH<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#portfolio">Portofolio</a></li>
+        <li><a href="#services">Layanan</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Arsitek & Desainer</p>
+      <h1 class="hero-title">Menciptakan Ruang<br /><em>yang Bermakna</em></h1>
+      <p class="hero-sub">Desain eksterior, interior, dan sistem engineering yang menyatu dalam harmoni estetika dan fungsi.</p>
+      <div class="hero-cta">
+        <a href="#portfolio" class="btn btn-primary">Lihat Portofolio</a>
+        <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-image">
+            <div class="about-img-placeholder">
+              <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="260" fill="#1a1a1a"/>
+                <circle cx="100" cy="90" r="40" fill="#333"/>
+                <path d="M20 220 Q100 170 180 220 L180 260 L20 260 Z" fill="#333"/>
+              </svg>
+              <p class="img-placeholder-hint">Foto Profil</p>
+            </div>
+            <div class="about-badge">
+              <span class="badge-num">12+</span>
+              <span class="badge-txt">Tahun<br/>Pengalaman</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">Tentang Saya</p>
+          <h2>Visi Arsitektur<br/>yang Berkelanjutan</h2>
+          <p>Saya adalah arsitek berpengalaman yang berfokus pada desain yang menggabungkan keindahan estetika dengan fungsionalitas tinggi. Setiap proyek dirancang dengan mempertimbangkan konteks budaya, lingkungan, dan kebutuhan penghuni.</p>
+          <p>Dengan keahlian di bidang desain eksterior, interior, dan sistem engineering, saya menawarkan solusi arsitektur yang komprehensif dari konsep hingga implementasi.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">85+</span>
+              <span class="stat-label">Proyek Selesai</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">40+</span>
+              <span class="stat-label">Klien Puas</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">8</span>
+              <span class="stat-label">Penghargaan</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Mari Berkolaborasi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Portofolio</p>
+        <h2>Karya Terpilih</h2>
+        <p class="section-desc">Jelajahi koleksi proyek dalam tiga bidang keahlian utama.</p>
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="eksterior">Eksterior</button>
+        <button class="filter-btn" data-filter="interior">Interior</button>
+        <button class="filter-btn" data-filter="engineering">Engineering</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- EKSTERIOR -->
+        <div class="portfolio-card" data-category="eksterior">
+          <div class="card-image">
+            <div class="img-ph eksterior-1">
+              <img src="assets/villa-tropis-modern.jpg" alt="Villa Tropis Modern" />
+            </div>
+            <div class="card-overlay">
+              <span class="card-cat">Eksterior</span>
+              <button class="card-view" onclick="openModal('eksterior-1')">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Villa Tropis Modern</h3>
+            <p>Bandung, Jawa Barat · 2024</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="eksterior">
+          <div class="card-image">
+            <div class="img-ph eksterior-2">
+              <img src="assets/gedung-komersial-kontemporer.jpg" alt="Gedung Komersial Kontemporer" />
+            </div>
+            <div class="card-overlay">
+              <span class="card-cat">Eksterior</span>
+              <button class="card-view" onclick="openModal('eksterior-2')">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Gedung Komersial Kontemporer</h3>
+            <p>Jakarta Selatan · 2023</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="eksterior">
+          <div class="card-image">
+            <div class="img-ph eksterior-3">
+              <img src="assets/rumah-minimalis-klasik.jpg" alt="Rumah Minimalis Klasik" />
+            </div>
+            <div class="card-overlay">
+              <span class="card-cat">Eksterior</span>
+              <button class="card-view" onclick="openModal('eksterior-3')">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Rumah Minimalis Klasik</h3>
+            <p>Yogyakarta · 2023</p>
+          </div>
+        </div>
+
+        <!-- INTERIOR -->
+        <div class="portfolio-card" data-category="interior">
+          <div class="card-image">
+            <div class="img-ph interior-1">
+              <img src="assets/ruang-tamu-japandi.jpg" alt="Ruang Tamu Japandi" />
+            </div>
+            <div class="card-overlay">
+              <span class="card-cat">Interior</span>
+              <button class="card-view" onclick="openModal('interior-1')">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Ruang Tamu Japandi</h3>
+            <p>Surabaya · 2024</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="interior">
+          <div class="card-image">
+            <div class="img-ph interior-2">
+              <img src="assets/home-theater-premium.jpg" alt="Home Theater Premium" />
+            </div>
+            <div class="card-overlay">
+              <span class="card-cat">Interior</span>
+              <button class="card-view" onclick="openModal('interior-2')">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Home Theater Premium</h3>
+            <p>BSD City · 2024</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="interior">
+          <div class="card-image">
+            <div class="img-ph interior-3">
+              <img src="assets/dapur-open-plan-modern.jpg" alt="Dapur Open Plan Modern" />
+            </div>
+            <div class="card-overlay">
+              <span class="card-cat">Interior</span>
+              <button class="card-view" onclick="openModal('interior-3')">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Dapur Open Plan Modern</h3>
+            <p>Bali · 2023</p>
+          </div>
+        </div>
+
+        <!-- ENGINEERING -->
+        <div class="portfolio-card" data-category="engineering">
+          <div class="card-image">
+            <div class="img-ph engineering-1">
+              <img src="assets/denah-lantai-residensial.jpg" alt="Denah Lantai Residensial" />
+            </div>
+            <div class="card-overlay">
+              <span class="card-cat">Engineering</span>
+              <button class="card-view" onclick="openModal('engineering-1')">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Denah Lantai Residensial</h3>
+            <p>Gambar Teknik · Skala 1:100</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="engineering">
+          <div class="card-image">
+            <div class="img-ph engineering-2">
+              <img src="assets/sistem-struktur-beton.jpg" alt="Sistem Struktur Beton" />
+            </div>
+            <div class="card-overlay">
+              <span class="card-cat">Engineering</span>
+              <button class="card-view" onclick="openModal('engineering-2')">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Sistem Struktur Beton</h3>
+            <p>Detail Kolom & Balok · 2024</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="engineering">
+          <div class="card-image">
+            <div class="img-ph engineering-3">
+              <img src="assets/sistem-mep.jpg" alt="Sistem MEP" />
+            </div>
+            <div class="card-overlay">
+              <span class="card-cat">Engineering</span>
+              <button class="card-view" onclick="openModal('engineering-3')">Lihat Detail</button>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Sistem MEP (Mekanikal, Elektrikal, Plumbing)</h3>
+            <p>Instalasi Teknis · 2023</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Layanan</p>
+        <h2>Apa yang Saya Tawarkan</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4L44 16V40H4V16L24 4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <rect x="16" y="28" width="16" height="12" fill="none" stroke="currentColor" stroke-width="2"/>
+              <rect x="10" y="20" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"/>
+              <rect x="28" y="20" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Desain Eksterior</h3>
+          <p>Fasad, landscaping, dan tata letak bangunan yang memaksimalkan estetika dan konteks lingkungan sekitar.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="40" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+              <rect x="12" y="12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"/>
+              <rect x="26" y="12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"/>
+              <rect x="12" y="26" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M26 31 Q31 26 36 31" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Desain Interior</h3>
+          <p>Tata ruang, pemilihan material, pencahayaan, dan furnitur yang menciptakan atmosfer yang nyaman dan fungsional.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="8" width="40" height="32" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+              <line x1="4" y1="16" x2="44" y2="16" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="16" y1="8" x2="16" y2="40" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="28" cy="28" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+              <line x1="32" y1="32" x2="38" y2="38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Gambar Engineering</h3>
+          <p>Denah teknis, gambar struktur, MEP, dan detail konstruksi sesuai standar yang berlaku.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 12 L28 20 L36 21 L30 27 L32 36 L24 31 L16 36 L18 27 L12 21 L20 20 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Konsultasi & Perencanaan</h3>
+          <p>Analisis kebutuhan, studi kelayakan, dan perencanaan strategis proyek dari konsep awal hingga selesai.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-label">Kontak</p>
+          <h2>Mari Wujudkan Proyek Anda</h2>
+          <p>Siap berdiskusi tentang proyek Anda? Hubungi saya untuk konsultasi awal.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Lokasi</strong>
+                <p>Jakarta, Indonesia</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <p>hello@arsitek-portfolio.id</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Telepon</strong>
+                <p>+62 812 3456 7890</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nama Lengkap</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="john@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Jenis Proyek</label>
+            <select id="subject" name="subject">
+              <option value="">Pilih jenis proyek...</option>
+              <option value="eksterior">Desain Eksterior</option>
+              <option value="interior">Desain Interior</option>
+              <option value="engineering">Gambar Engineering</option>
+              <option value="full">Paket Lengkap</option>
+              <option value="konsultasi">Konsultasi</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea id="message" name="message" rows="5" placeholder="Ceritakan proyek Anda..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Kirim Pesan</button>
+          <div class="form-success" id="formSuccess">Pesan terkirim! Saya akan menghubungi Anda segera.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo">ARCH<span>.</span></a>
+          <p>Merancang masa depan, satu bangunan dalam satu waktu.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">Tentang</a>
+          <a href="#portfolio">Portofolio</a>
+          <a href="#services">Layanan</a>
+          <a href="#contact">Kontak</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/ruangaktif_design?igsh=a3JibDVnOXJlZzlj" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="currentColor"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Behance">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H-0.026V5h7.757c2.356 0 4.127 1.339 4.127 3.836 0 1.482-.725 2.612-1.848 3.27 1.555.613 2.486 1.815 2.486 3.648 0 2.867-2.05 4.234-5.032 4.234zM2.849 9.205h3.948c1.183 0 1.956-.665 1.956-1.692 0-1.098-.773-1.704-2.069-1.704H2.849v3.396zm0 6.977h4.305c1.312 0 2.256-.768 2.256-1.97 0-1.217-.944-1.977-2.375-1.977H2.849v3.947z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Arsitek Portfolio. Semua hak dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" id="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
