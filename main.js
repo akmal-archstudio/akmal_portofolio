@@ -1,44 +1,104 @@
 'use strict';
 
-// Navbar scroll effect
+// =====================
+// DATA PORTOFOLIO
+// Tambah/hapus item di sini, kartu otomatis muncul
+// =====================
+const portfolioItems = [
+  { id: 'eksterior-1', cat: 'eksterior', title: 'Villa Tropis Modern',         img: 'assets/villa-tropis-modern.jpg' },
+  { id: 'eksterior-2', cat: 'eksterior', title: 'Gedung Komersial Kontemporer', img: 'assets/gedung-komersial-kontemporer.jpg' },
+  { id: 'eksterior-3', cat: 'eksterior', title: 'Rumah Minimalis Klasik',       img: 'assets/rumah-minimalis-klasik.jpg' },
+  { id: 'interior-1',  cat: 'interior',  title: 'Ruang Tamu Japandi',           img: 'assets/interior/ruang-tamu-japandi.jpg' },
+  { id: 'interior-2',  cat: 'interior',  title: 'Home Theater Premium',         img: 'assets/interior/home-theater-premium.jpg' },
+  { id: 'interior-3',  cat: 'interior',  title: 'Dapur Open Plan Modern',       img: 'assets/interior/dapur-open-plan-modern.jpg' },
+  { id: 'interior-4',  cat: 'interior',  title: 'Interior 01',                  img: 'assets/interior/interior-01.jpg' },
+  { id: 'interior-5',  cat: 'interior',  title: 'Interior 02',                  img: 'assets/interior/interior-02.jpg' },
+  { id: 'interior-6',  cat: 'interior',  title: 'Interior 03',                  img: 'assets/interior/interior-03.jpg' },
+  { id: 'interior-7',  cat: 'interior',  title: 'Interior 04',                  img: 'assets/interior/interior-04.jpg' },
+  { id: 'interior-8',  cat: 'interior',  title: 'Interior 05',                  img: 'assets/interior/interior-05.jpg' },
+  { id: 'interior-9',  cat: 'interior',  title: 'Interior 06',                  img: 'assets/interior/interior-06.jpg' },
+  { id: 'interior-10', cat: 'interior',  title: 'Interior 07',                  img: 'assets/interior/interior-07.jpg' },
+  { id: 'interior-11', cat: 'interior',  title: 'Interior 08',                  img: 'assets/interior/interior-08.jpg' },
+  { id: 'interior-12', cat: 'interior',  title: 'Interior 09',                  img: 'assets/interior/interior-09.jpg' },
+  { id: 'interior-13', cat: 'interior',  title: 'Interior 10',                  img: 'assets/interior/interior-10.jpg' },
+  { id: 'interior-14', cat: 'interior',  title: 'Interior 11',                  img: 'assets/interior/interior-11.jpg' },
+  { id: 'interior-15', cat: 'interior',  title: 'Interior 12',                  img: 'assets/interior/interior-12.jpg' },
+  { id: 'interior-16', cat: 'interior',  title: 'Interior 13',                  img: 'assets/interior/interior-13.jpg' },
+  { id: 'interior-17', cat: 'interior',  title: 'Interior 14',                  img: 'assets/interior/interior-14.jpg' },
+  { id: 'interior-18', cat: 'interior',  title: 'Interior 15',                  img: 'assets/interior/interior-15.jpg' },
+  { id: 'interior-19', cat: 'interior',  title: 'Interior 16',                  img: 'assets/interior/interior-16.jpg' },
+  { id: 'interior-20', cat: 'interior',  title: 'Interior 17',                  img: 'assets/interior/interior-17.jpg' },
+  { id: 'interior-21', cat: 'interior',  title: 'Interior 18',                  img: 'assets/interior/interior-18.jpg' },
+  { id: 'engineering-1', cat: 'engineering', title: 'Denah Lantai Residensial', img: 'assets/denah-lantai-residensial.jpg' },
+  { id: 'engineering-2', cat: 'engineering', title: 'Sistem Struktur Beton',    img: 'assets/sistem-struktur-beton.jpg' },
+  { id: 'engineering-3', cat: 'engineering', title: 'Sistem MEP',               img: 'assets/sistem-mep.jpg' },
+  { id: 'engineering-4', cat: 'engineering', title: 'Engineering 01',           img: 'assets/engineering/engineering-01.jpg' },
+];
+
+const catLabel = { eksterior: 'Eksterior', interior: 'Interior', engineering: 'Engineering' };
+
+// =====================
+// GENERATE KARTU PORTOFOLIO
+// =====================
+const grid = document.getElementById('portfolioGrid');
+
+portfolioItems.forEach(item => {
+  const card = document.createElement('div');
+  card.className = 'portfolio-card';
+  card.dataset.category = item.cat;
+  card.innerHTML = `
+    <div class="card-image">
+      <div class="img-ph ${item.id}">
+        <img src="${item.img}" alt="${item.title}" loading="lazy" />
+      </div>
+      <div class="card-overlay">
+        <span class="card-cat">${catLabel[item.cat]}</span>
+        <button class="card-view" onclick="openModal('${item.id}')">Lihat Detail</button>
+      </div>
+    </div>
+    <div class="card-info">
+      <h3>${item.title}</h3>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+// =====================
+// NAVBAR
+// =====================
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+const navLinks  = document.getElementById('navLinks');
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// Portfolio filter
+// =====================
+// FILTER PORTOFOLIO
+// =====================
 const filterBtns = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.portfolio-card');
+const allCards   = document.querySelectorAll('.portfolio-card');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
     const filter = btn.dataset.filter;
-    cards.forEach(card => {
-      if (filter === 'all' || card.dataset.category === filter) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
+    allCards.forEach(card => {
+      card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
     });
   });
 });
 
-// Contact form
+// =====================
+// CONTACT FORM
+// =====================
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
@@ -47,7 +107,6 @@ contactForm.addEventListener('submit', e => {
   const btn = contactForm.querySelector('button[type="submit"]');
   btn.textContent = 'Mengirim...';
   btn.disabled = true;
-
   setTimeout(() => {
     formSuccess.classList.add('show');
     contactForm.reset();
@@ -57,120 +116,18 @@ contactForm.addEventListener('submit', e => {
   }, 1000);
 });
 
-// Modal data
-const modalData = {
-  'eksterior-1': {
-    title: 'Villa Tropis Modern',
-    cat: 'Eksterior',
-    location: 'Bandung, Jawa Barat',
-    year: '2024',
-    area: '450 m²',
-    desc: 'Villa dua lantai dengan konsep tropis modern yang memadukan elemen alam dengan desain kontemporer. Fasad menggunakan kombinasi batu alam, kayu jati, dan kaca tempered yang memaksimalkan pencahayaan alami. Taman tropis yang lush mengelilingi bangunan menciptakan privasi sekaligus harmoni dengan lingkungan.',
-    tags: ['Tropis', 'Modern', 'Batu Alam', 'Kaca', 'Landscaping'],
-    svgId: 'eksterior-1',
-  },
-  'eksterior-2': {
-    title: 'Gedung Komersial Kontemporer',
-    cat: 'Eksterior',
-    location: 'Jakarta Selatan',
-    year: '2023',
-    area: '2.400 m²',
-    desc: 'Gedung perkantoran 8 lantai dengan curtain wall kaca gelap dan frame aluminium yang mencerminkan citra bisnis modern. Desain fasad yang dinamis dengan permainan bidang solid dan transparan menciptakan identitas visual yang kuat di kawasan CBD.',
-    tags: ['Komersial', 'Curtain Wall', 'High-rise', 'CBD', 'Aluminium'],
-    svgId: 'eksterior-2',
-  },
-  'eksterior-3': {
-    title: 'Rumah Minimalis Klasik',
-    cat: 'Eksterior',
-    location: 'Yogyakarta',
-    year: '2023',
-    area: '320 m²',
-    desc: 'Hunian satu keluarga yang menggabungkan proporsi klasik dengan detail minimalis. Atap pelana simetris, kolom berkarakter, dan palet warna netral menciptakan tampilan yang timeless dan elegan. Taman depan yang tertata rapi melengkapi keindahan fasad.',
-    tags: ['Minimalis', 'Klasik', 'Residensial', 'Timeless'],
-    svgId: 'eksterior-3',
-  },
-  'interior-1': {
-    title: 'Ruang Tamu Japandi',
-    cat: 'Interior',
-    location: 'Surabaya',
-    year: '2024',
-    area: '45 m²',
-    desc: 'Desain ruang tamu yang menggabungkan estetika Jepang dan Skandinavia (Japandi) dengan palet warna earthy tone. Material alami seperti kayu jati, rotan, dan linen dipadukan dengan furniture berproporsi rendah. Pencahayaan layered — ambient, task, dan accent — menciptakan suasana hangat dan tenang.',
-    tags: ['Japandi', 'Natural', 'Earthy Tone', 'Low Furniture', 'Warm Lighting'],
-    svgId: 'interior-1',
-  },
-  'interior-2': {
-    title: 'Home Theater Premium',
-    cat: 'Interior',
-    location: 'BSD City',
-    year: '2024',
-    area: '38 m²',
-    desc: 'Ruang bioskop pribadi dengan sistem akustik kelas cinema dan desain immersive yang gelap dan dramatis. Panel akustik custom berbalut fabric velvet menyerap suara secara optimal. Kursi recliner kulit premium dan pencahayaan LED ambient yang dapat diprogram melengkapi pengalaman menonton.',
-    tags: ['Home Cinema', 'Akustik', 'LED', 'Premium', 'Immersive'],
-    svgId: 'interior-2',
-  },
-  'interior-3': {
-    title: 'Dapur Open Plan Modern',
-    cat: 'Interior',
-    location: 'Bali',
-    year: '2023',
-    area: '60 m²',
-    desc: 'Dapur open plan yang terintegrasi dengan ruang makan dan living area dalam satu konsep yang mengalir. Island counter marmer putih menjadi focal point dengan storage bawah yang melimpah. Kabinet atas dan bawah berfinishing matte putih dengan hardware emas menciptakan tampilan yang bersih namun mewah.',
-    tags: ['Open Plan', 'Marmer', 'Island Counter', 'Modern', 'Integrated'],
-    svgId: 'interior-3',
-  },
-  'engineering-1': {
-    title: 'Denah Lantai Residensial',
-    cat: 'Engineering',
-    location: 'Gambar Teknik',
-    year: 'Skala 1:100',
-    area: '340 m²',
-    desc: 'Gambar denah lantai lengkap untuk proyek hunian dua lantai dengan anotasi dimensi, keterangan ruang, dan notasi teknis sesuai SNI. Denah mencakup layout ruang tamu, ruang makan, dapur, 4 kamar tidur, 3 kamar mandi, ruang keluarga, dan area servis. Semua gambar dikerjakan dengan AutoCAD dan disajikan dalam format A1.',
-    tags: ['AutoCAD', 'SNI', 'Denah', 'Dimensi', 'A1'],
-    svgId: 'engineering-1',
-  },
-  'engineering-2': {
-    title: 'Sistem Struktur Beton',
-    cat: 'Engineering',
-    location: 'Gambar Teknik',
-    year: 'Detail Konstruksi',
-    area: 'Skala 1:50',
-    desc: 'Gambar detail sistem struktur beton bertulang yang mencakup penulangan kolom, balok, dan pelat lantai. Spesifikasi beton mutu K-250, tulangan BJTP-24 dan BJTD-40 sesuai standar perhitungan struktur. Gambar ini merupakan bagian dari set dokumen tender dan pelaksanaan proyek gedung 3 lantai.',
-    tags: ['Struktur', 'Beton Bertulang', 'AutoCAD', 'K-250', 'Tender'],
-    svgId: 'engineering-2',
-  },
-  'engineering-3': {
-    title: 'Sistem MEP',
-    cat: 'Engineering',
-    location: 'Gambar Teknik',
-    year: 'Instalasi Teknis 2023',
-    area: 'Multi-lantai',
-    desc: 'Gambar sistem Mekanikal, Elektrikal, dan Plumbing (MEP) yang komprehensif meliputi jaringan air bersih, air kotor, sistem drainase, instalasi listrik, titik lampu, dan sistem tata udara. Koordinasi antar disiplin dilakukan untuk menghindari clash dan memastikan aksesibilitas maintenance. Gambar dikerjakan dengan Revit MEP dan AutoCAD.',
-    tags: ['MEP', 'Plumbing', 'Elektrikal', 'Revit', 'Koordinasi'],
-    svgId: 'engineering-3',
-  },
-};
-
+// =====================
+// MODAL — gambar saja
+// =====================
 function openModal(id) {
-  const data = modalData[id];
-  if (!data) return;
-
-  const sourceImg = document.querySelector(`.img-ph.${data.svgId}`);
-  const svgClone = sourceImg ? sourceImg.innerHTML : '';
+  const item = portfolioItems.find(i => i.id === id);
+  if (!item) return;
 
   document.getElementById('modalBody').innerHTML = `
-    <div class="modal-img">${svgClone}</div>
-    <span class="card-cat" style="display:inline-block;margin-top:1rem">${data.cat}</span>
-    <h3>${data.title}</h3>
-    <div class="modal-meta">
-      <span><strong>Lokasi:</strong> ${data.location}</span>
-      <span><strong>Tahun:</strong> ${data.year}</span>
-      <span><strong>Luas:</strong> ${data.area}</span>
+    <div class="modal-img">
+      <img src="${item.img}" alt="${item.title}" />
     </div>
-    <p class="modal-desc">${data.desc}</p>
-    <div class="modal-tags">
-      ${data.tags.map(t => `<span>${t}</span>`).join('')}
-    </div>
+    <h3>${item.title}</h3>
   `;
 
   document.getElementById('modalOverlay').classList.add('open');
@@ -186,7 +143,9 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
 
-// Scroll reveal
+// =====================
+// SCROLL REVEAL
+// =====================
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
