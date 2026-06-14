@@ -5,9 +5,10 @@
 // Tambah/hapus item di sini, kartu otomatis muncul
 // =====================
 const portfolioItems = [
-  { id: 'eksterior-1', cat: 'eksterior', title: 'Villa Tropis Modern',         img: 'assets/villa-tropis-modern.jpg' },
-  { id: 'eksterior-2', cat: 'eksterior', title: 'Gedung Komersial Kontemporer', img: 'assets/gedung-komersial-kontemporer.jpg' },
-  { id: 'eksterior-3', cat: 'eksterior', title: 'Rumah Minimalis Klasik',       img: 'assets/rumah-minimalis-klasik.jpg' },
+  { id: 'eksterior-1', cat: 'eksterior', title: 'Exterior 1', img: 'assets/exterior/exterior1.jpg' },
+  { id: 'eksterior-2', cat: 'eksterior', title: 'Exterior 2', img: 'assets/exterior/exterior2.jpg' },
+  { id: 'eksterior-3', cat: 'eksterior', title: 'Exterior 3', img: 'assets/exterior/exterior3.jpg' },
+  { id: 'eksterior-4', cat: 'eksterior', title: 'Exterior 4', img: 'assets/exterior/exterior4.jpg' },
   { id: 'interior-1',  cat: 'interior', title: 'Interior 1',  img: 'assets/interior/interior1.jpg' },
   { id: 'interior-2',  cat: 'interior', title: 'Interior 2',  img: 'assets/interior/interior2.jpg' },
   { id: 'interior-3',  cat: 'interior', title: 'Interior 3',  img: 'assets/interior/interior3.jpg' },
@@ -29,10 +30,11 @@ const portfolioItems = [
   { id: 'interior-19', cat: 'interior', title: 'Interior 19', img: 'assets/interior/interior19.jpg' },
   { id: 'interior-20', cat: 'interior', title: 'Interior 20', img: 'assets/interior/interior20.jpg' },
   { id: 'interior-21', cat: 'interior', title: 'Interior 21', img: 'assets/interior/interior21.jpg' },
-  { id: 'engineering-1', cat: 'engineering', title: 'Denah Lantai Residensial', img: 'assets/denah-lantai-residensial.jpg' },
-  { id: 'engineering-2', cat: 'engineering', title: 'Sistem Struktur Beton',    img: 'assets/sistem-struktur-beton.jpg' },
-  { id: 'engineering-3', cat: 'engineering', title: 'Sistem MEP',               img: 'assets/sistem-mep.jpg' },
-  { id: 'engineering-4', cat: 'engineering', title: 'Engineering 01',           img: 'assets/engineering/engineering-01.jpg' },
+  { id: 'interior-22', cat: 'interior', title: 'Interior 22', img: 'assets/interior/interior22.jpg' },
+  { id: 'interior-23', cat: 'interior', title: 'Interior 23', img: 'assets/interior/interior23.jpg' },
+  { id: 'engineering-1', cat: 'engineering', title: 'Engineering 1', img: 'assets/engineering/engineering1.jpg' },
+  { id: 'engineering-2', cat: 'engineering', title: 'Engineering 2', img: 'assets/engineering/engineering2.jpg' },
+  { id: 'engineering-3', cat: 'engineering', title: 'Engineering 3', img: 'assets/engineering/engineering3.jpg' },
 ];
 
 const catLabel = { eksterior: 'Eksterior', interior: 'Interior', engineering: 'Engineering' };
