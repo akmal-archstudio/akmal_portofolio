@@ -182,6 +182,18 @@ h3 { font-size: 1.35rem; }
   overflow: hidden;
 }
 
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+  z-index: 2;
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -219,12 +231,13 @@ h3 { font-size: 1.35rem; }
   margin: 0 auto;
   padding: 0 1.5rem;
   padding-top: 6rem;
+  padding-bottom: 10rem;
 }
 
 .hero-logo {
-  height: 160px;
+  height: 120px;
   width: auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   display: block;
 }
 
@@ -233,22 +246,12 @@ h3 { font-size: 1.35rem; }
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--gold);
+  margin-bottom: 1rem;
 }
 
 .hero-title {
   color: var(--white);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   max-width: 700px;
 }
 .hero-title em {
@@ -257,9 +260,9 @@ h3 { font-size: 1.35rem; }
 }
 
 .hero-sub {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(245,240,232,0.6);
-  max-width: 500px;
+  max-width: 480px;
   margin-bottom: 2.5rem;
   line-height: 1.8;
 }
@@ -569,9 +572,8 @@ h3 { font-size: 1.35rem; }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 5rem;
-  align-items: start;
+  grid-template-columns: 1fr;
+  max-width: 600px;
 }
 
 .contact-info h2 { margin-bottom: 1rem; }
