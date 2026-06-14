@@ -221,6 +221,13 @@ h3 { font-size: 1.35rem; }
   padding-top: 6rem;
 }
 
+.hero-logo {
+  height: 160px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
 .hero-eyebrow {
   font-size: 0.75rem;
   letter-spacing: 0.3em;
