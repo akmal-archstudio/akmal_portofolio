@@ -8,27 +8,27 @@ const portfolioItems = [
   { id: 'eksterior-1', cat: 'eksterior', title: 'Villa Tropis Modern',         img: 'assets/villa-tropis-modern.jpg' },
   { id: 'eksterior-2', cat: 'eksterior', title: 'Gedung Komersial Kontemporer', img: 'assets/gedung-komersial-kontemporer.jpg' },
   { id: 'eksterior-3', cat: 'eksterior', title: 'Rumah Minimalis Klasik',       img: 'assets/rumah-minimalis-klasik.jpg' },
-  { id: 'interior-1',  cat: 'interior',  title: 'Ruang Tamu Japandi',           img: 'assets/interior/ruang-tamu-japandi.jpg' },
-  { id: 'interior-2',  cat: 'interior',  title: 'Home Theater Premium',         img: 'assets/interior/home-theater-premium.jpg' },
-  { id: 'interior-3',  cat: 'interior',  title: 'Dapur Open Plan Modern',       img: 'assets/interior/dapur-open-plan-modern.jpg' },
-  { id: 'interior-4',  cat: 'interior',  title: 'Interior 01',                  img: 'assets/interior/interior-01.jpg' },
-  { id: 'interior-5',  cat: 'interior',  title: 'Interior 02',                  img: 'assets/interior/interior-02.jpg' },
-  { id: 'interior-6',  cat: 'interior',  title: 'Interior 03',                  img: 'assets/interior/interior-03.jpg' },
-  { id: 'interior-7',  cat: 'interior',  title: 'Interior 04',                  img: 'assets/interior/interior-04.jpg' },
-  { id: 'interior-8',  cat: 'interior',  title: 'Interior 05',                  img: 'assets/interior/interior-05.jpg' },
-  { id: 'interior-9',  cat: 'interior',  title: 'Interior 06',                  img: 'assets/interior/interior-06.jpg' },
-  { id: 'interior-10', cat: 'interior',  title: 'Interior 07',                  img: 'assets/interior/interior-07.jpg' },
-  { id: 'interior-11', cat: 'interior',  title: 'Interior 08',                  img: 'assets/interior/interior-08.jpg' },
-  { id: 'interior-12', cat: 'interior',  title: 'Interior 09',                  img: 'assets/interior/interior-09.jpg' },
-  { id: 'interior-13', cat: 'interior',  title: 'Interior 10',                  img: 'assets/interior/interior-10.jpg' },
-  { id: 'interior-14', cat: 'interior',  title: 'Interior 11',                  img: 'assets/interior/interior-11.jpg' },
-  { id: 'interior-15', cat: 'interior',  title: 'Interior 12',                  img: 'assets/interior/interior-12.jpg' },
-  { id: 'interior-16', cat: 'interior',  title: 'Interior 13',                  img: 'assets/interior/interior-13.jpg' },
-  { id: 'interior-17', cat: 'interior',  title: 'Interior 14',                  img: 'assets/interior/interior-14.jpg' },
-  { id: 'interior-18', cat: 'interior',  title: 'Interior 15',                  img: 'assets/interior/interior-15.jpg' },
-  { id: 'interior-19', cat: 'interior',  title: 'Interior 16',                  img: 'assets/interior/interior-16.jpg' },
-  { id: 'interior-20', cat: 'interior',  title: 'Interior 17',                  img: 'assets/interior/interior-17.jpg' },
-  { id: 'interior-21', cat: 'interior',  title: 'Interior 18',                  img: 'assets/interior/interior-18.jpg' },
+  { id: 'interior-1',  cat: 'interior', title: 'Interior 1',  img: 'assets/interior/interior1.jpg' },
+  { id: 'interior-2',  cat: 'interior', title: 'Interior 2',  img: 'assets/interior/interior2.jpg' },
+  { id: 'interior-3',  cat: 'interior', title: 'Interior 3',  img: 'assets/interior/interior3.jpg' },
+  { id: 'interior-4',  cat: 'interior', title: 'Interior 4',  img: 'assets/interior/interior4.jpg' },
+  { id: 'interior-5',  cat: 'interior', title: 'Interior 5',  img: 'assets/interior/interior5.jpg' },
+  { id: 'interior-6',  cat: 'interior', title: 'Interior 6',  img: 'assets/interior/interior6.jpg' },
+  { id: 'interior-7',  cat: 'interior', title: 'Interior 7',  img: 'assets/interior/interior7.jpg' },
+  { id: 'interior-8',  cat: 'interior', title: 'Interior 8',  img: 'assets/interior/interior8.jpg' },
+  { id: 'interior-9',  cat: 'interior', title: 'Interior 9',  img: 'assets/interior/interior9.jpg' },
+  { id: 'interior-10', cat: 'interior', title: 'Interior 10', img: 'assets/interior/interior10.jpg' },
+  { id: 'interior-11', cat: 'interior', title: 'Interior 11', img: 'assets/interior/interior11.jpg' },
+  { id: 'interior-12', cat: 'interior', title: 'Interior 12', img: 'assets/interior/interior12.jpg' },
+  { id: 'interior-13', cat: 'interior', title: 'Interior 13', img: 'assets/interior/interior13.jpg' },
+  { id: 'interior-14', cat: 'interior', title: 'Interior 14', img: 'assets/interior/interior14.jpg' },
+  { id: 'interior-15', cat: 'interior', title: 'Interior 15', img: 'assets/interior/interior15.jpg' },
+  { id: 'interior-16', cat: 'interior', title: 'Interior 16', img: 'assets/interior/interior16.jpg' },
+  { id: 'interior-17', cat: 'interior', title: 'Interior 17', img: 'assets/interior/interior17.jpg' },
+  { id: 'interior-18', cat: 'interior', title: 'Interior 18', img: 'assets/interior/interior18.jpg' },
+  { id: 'interior-19', cat: 'interior', title: 'Interior 19', img: 'assets/interior/interior19.jpg' },
+  { id: 'interior-20', cat: 'interior', title: 'Interior 20', img: 'assets/interior/interior20.jpg' },
+  { id: 'interior-21', cat: 'interior', title: 'Interior 21', img: 'assets/interior/interior21.jpg' },
   { id: 'engineering-1', cat: 'engineering', title: 'Denah Lantai Residensial', img: 'assets/denah-lantai-residensial.jpg' },
   { id: 'engineering-2', cat: 'engineering', title: 'Sistem Struktur Beton',    img: 'assets/sistem-struktur-beton.jpg' },
   { id: 'engineering-3', cat: 'engineering', title: 'Sistem MEP',               img: 'assets/sistem-mep.jpg' },
@@ -49,7 +49,7 @@ portfolioItems.forEach(item => {
   card.innerHTML = `
     <div class="card-image">
       <div class="img-ph ${item.id}">
-        <img src="${item.img}" alt="${item.title}" loading="lazy" />
+        <img src="${item.img}" alt="${item.title}" />
       </div>
       <div class="card-overlay">
         <span class="card-cat">${catLabel[item.cat]}</span>
@@ -144,7 +144,7 @@ document.addEventListener('keydown', e => {
 });
 
 // =====================
-// SCROLL REVEAL
+// SCROLL REVEAL — hanya untuk section non-portfolio
 // =====================
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -155,7 +155,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.portfolio-card, .service-card, .about-grid, .contact-grid').forEach(el => {
+document.querySelectorAll('.service-card, .about-grid, .contact-grid').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
