@@ -104,19 +104,21 @@ filterBtns.forEach(btn => {
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
-contactForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const btn = contactForm.querySelector('button[type="submit"]');
-  btn.textContent = 'Mengirim...';
-  btn.disabled = true;
-  setTimeout(() => {
-    formSuccess.classList.add('show');
-    contactForm.reset();
-    btn.textContent = 'Kirim Pesan';
-    btn.disabled = false;
-    setTimeout(() => formSuccess.classList.remove('show'), 5000);
-  }, 1000);
-});
+if (contactForm) {
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    btn.textContent = 'Mengirim...';
+    btn.disabled = true;
+    setTimeout(() => {
+      if (formSuccess) formSuccess.classList.add('show');
+      contactForm.reset();
+      btn.textContent = 'Kirim Pesan';
+      btn.disabled = false;
+      if (formSuccess) setTimeout(() => formSuccess.classList.remove('show'), 5000);
+    }, 1000);
+  });
+}
 
 // =====================
 // MODAL — gambar saja
@@ -144,6 +146,96 @@ function closeModal() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
+
+// =====================
+// MUSIC PLAYER
+// =====================
+(function () {
+  var ytPlayer;
+  var isPlaying = false;
+  var isMuted = true;
+
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
+  window.onYouTubeIframeAPIReady = function () {
+    ytPlayer = new YT.Player('ytPlayer', {
+      height: '151',
+      width: '268',
+      videoId: 'e_k60STocV8',
+      playerVars: {
+        autoplay: 1,
+        loop: 1,
+        playlist: 'e_k60STocV8',
+        controls: 0,
+        rel: 0,
+        mute: 1,
+        modestbranding: 1,
+        iv_load_policy: 3
+      },
+      events: {
+        onReady: function (e) {
+          e.target.mute();
+          e.target.playVideo();
+          isPlaying = true;
+          isMuted = true;
+          syncMusicUI();
+        },
+        onStateChange: function (e) {
+          if (e.data === YT.PlayerState.ENDED) ytPlayer.playVideo();
+          isPlaying = (e.data === YT.PlayerState.PLAYING);
+          syncMusicUI();
+        }
+      }
+    });
+  };
+
+  function syncMusicUI() {
+    var playIcon   = document.querySelector('.play-icon');
+    var pauseIcon  = document.querySelector('.pause-icon');
+    var volOnIcon  = document.querySelector('.vol-on-icon');
+    var volOffIcon = document.querySelector('.vol-off-icon');
+    var eqFab      = document.getElementById('musicEqFab');
+    var noteIcon   = document.querySelector('.music-note-icon');
+    var eqSm       = document.getElementById('musicEqSm');
+
+    playIcon.style.display   = isPlaying ? 'none'  : 'block';
+    pauseIcon.style.display  = isPlaying ? 'block' : 'none';
+    eqFab.style.display      = isPlaying ? 'flex'  : 'none';
+    noteIcon.style.display   = isPlaying ? 'none'  : 'block';
+    eqSm.classList.toggle('playing', isPlaying);
+
+    volOnIcon.style.display  = isMuted ? 'none'  : 'block';
+    volOffIcon.style.display = isMuted ? 'block' : 'none';
+  }
+
+  document.getElementById('musicFab').addEventListener('click', function () {
+    document.getElementById('musicPanel').classList.toggle('open');
+  });
+
+  document.getElementById('musicPanelClose').addEventListener('click', function () {
+    document.getElementById('musicPanel').classList.remove('open');
+  });
+
+  document.getElementById('musicToggle').addEventListener('click', function () {
+    if (!ytPlayer || typeof ytPlayer.playVideo !== 'function') return;
+    if (isPlaying) { ytPlayer.pauseVideo(); } else { ytPlayer.playVideo(); }
+  });
+
+  document.getElementById('musicMuteBtn').addEventListener('click', function () {
+    if (!ytPlayer || typeof ytPlayer.mute !== 'function') return;
+    if (isMuted) {
+      ytPlayer.unMute();
+      ytPlayer.setVolume(80);
+      isMuted = false;
+    } else {
+      ytPlayer.mute();
+      isMuted = true;
+    }
+    syncMusicUI();
+  });
+})();
 
 // =====================
 // SCROLL REVEAL — hanya untuk section non-portfolio
